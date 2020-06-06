@@ -2,7 +2,6 @@
   <div class="nav-wrapper">
     <div class="content">
       <p>Money.vue</p>
-
     </div>
     <Nav/>
   </div>
