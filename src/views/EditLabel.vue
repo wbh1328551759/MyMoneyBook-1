@@ -53,6 +53,7 @@
     remove(){
       if(this.tag){
         if(tagListModel.remove(this.tag.id)){
+          window.alert('删除成功');
           this.$router.back();
         }else{
           window.alert('删除失败');
