@@ -3,7 +3,7 @@
     <div class="navBar">
       <Icon class="leftIcon" name="left" @click="goBack"/>
       <span class="title">编辑标签</span>
-      <span class="rightIcon" />
+      <span class="rightIcon"/>
     </div>
     <div class="form-wrapper">
       <FormItem :value="tag.name"
@@ -25,16 +25,18 @@
 
 
   @Component({
-      components: {Button, FormItem},
+    components: {Button, FormItem},
   })
 
   export default class EditLabel extends Vue {
-    get tag(){
-      return this.$store.state.currentTag
+    get tag() {
+      return this.$store.state.currentTag;
     }
+
     created() {
       const id = this.$route.params.id;
-      this.$store.commit('setCurrentTag', id)
+      this.$store.commit('fetchTags');
+      this.$store.commit('setCurrentTag', id);
       if (!this.tag) {
         this.$router.replace('/404');
       }
@@ -42,19 +44,15 @@
 
     update(name: string) {
       if (this.tag) {
-       // store.updateTag(this.tag.id, name);
+        this.$store.commit('updateTag', {
+          id: this.tag.id, name: name
+        });
       }
     }
 
     remove() {
       if (this.tag) {
-        return
-        // if (store.removeTag(this.tag.id)) {
-        //   window.alert('删除成功');
-        //   this.$router.back();
-        // } else {
-        //   window.alert('删除失败');
-        // }
+        this.$store.commit('removeTag', this.tag.id);
       }
     }
 
