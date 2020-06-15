@@ -40,9 +40,9 @@
   }
   ::v-deep .interval-tabs-item {
     background: #c4c4c4;
+    height: 48px;
     &.selected{
       background: white;
-
       &::after{
         display: none;
       }
