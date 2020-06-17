@@ -15,5 +15,6 @@ module.exports = {
       .tap(options=>({...options,plugins:[{removeAttrs: {attrs:'fill'}}]})).end()
     config.plugin('svg-sprite-loader').use(require('svg-sprite-loader/plugin'), [{plainSprite: true}])
     config.module.rule('svg').exclude.add(dir)
-  }
+  },
+
 }

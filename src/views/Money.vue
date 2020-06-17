@@ -6,9 +6,9 @@
     <div class="notes">
       <FormItem field-name="备注"
                 placeholder="在这里输入备注"
-                @update:value="onUpdateNotes"/>
+                :value.sync="record.notes"/>
     </div>
-    <Tags/>
+    <Tags :value.sync="record.tags"/>
   </Layout>
 </template>
 
@@ -26,7 +26,7 @@
     components: {Tabs, Tags, FormItem, NumberPad}
   })
   export default class Money extends Vue {
-    get recordList(){
+    get recordList() {
       return this.$store.state.recordList;
     }
 
@@ -35,8 +35,9 @@
     record: RecordItem = {
       tags: [], notes: '', type: '-', amount: 0
     };
-    created(){
-      this.$store.commit('fetchRecords')
+
+    created() {
+      this.$store.commit('fetchRecords');
     }
 
     onUpdateNotes(value: string) {
@@ -48,7 +49,14 @@
     }
 
     saveRecord() {
-      this.$store.commit('createRecord',this.record);
+      if(!this.record.tags || this.record.tags.length===0){
+        return window.alert('请至少选择一个标签');
+      }
+      this.$store.commit('createRecord', this.record);
+      if(this.$store.state.createRecordError === null){
+        this.record.notes = '';
+        window.alert('添加成功');
+      }
     }
 
 
@@ -60,7 +68,8 @@
     display: flex;
     flex-direction: column-reverse;
   }
-  .notes{
-    padding:12px 0;
+
+  .notes {
+    padding: 12px 0;
   }
 </style>
