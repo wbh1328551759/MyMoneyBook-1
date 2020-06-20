@@ -60,12 +60,12 @@
 
       > li {
         background: #f5f5f5;
-        height: 24px;
-        line-height: 24px;
-        border-radius: 12px;
-        padding: 0 16px;
+        height: 30px;
+        line-height: 30px;
+        border-radius: 15px;
+        padding: 0 20px;
         margin-right: 12px;
-        margin-top: 5px;
+        margin-top: 10px;
         color: #9c9c9c;
         &.selected {
           background: #0ac675;

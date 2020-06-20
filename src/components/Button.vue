@@ -24,7 +24,7 @@
     border-radius: 4px;
     border: none;
     padding: 10px 36px;
-
+    box-shadow: 0 0 5px rgba(0,0,0,0.50);
     &-wrapper {
       text-align: center;
       padding: 16px;
