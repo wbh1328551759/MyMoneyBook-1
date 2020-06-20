@@ -29,8 +29,6 @@
 </script>
 
 <style lang="scss" scoped>
-  @import "~@/assets/style/helper.scss";
-
   .formItem {
     font-size: 14px;
     padding-left: 16px;
@@ -38,6 +36,7 @@
     align-items: center;
     .name {
       padding-right: 16px;
+      color:#9b9b9b;
     }
     input {
       height: 40px;

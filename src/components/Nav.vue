@@ -35,8 +35,9 @@
     box-shadow: 0 0 3px rgba(0,0,0,0.25);
     flex-direction: row;
     font-size: 12px;
+    background:#ffffff ;
     > .item{
-      padding: 2px 0;
+      padding: 3px 0;
       width: 33.33333%;
       display: flex;
       justify-content: center;

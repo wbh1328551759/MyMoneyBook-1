@@ -49,11 +49,14 @@
     }
 
     saveRecord() {
-      if(!this.record.tags || this.record.tags.length===0){
+      if (!this.record.tags || this.record.tags.length === 0) {
         return window.alert('请至少选择一个标签');
       }
+      if (this.record.amount === 0) {
+        return window.alert('请输入一个数字');
+      }
       this.$store.commit('createRecord', this.record);
-      if(this.$store.state.createRecordError === null){
+      if (this.$store.state.createRecordError === null) {
         this.record.notes = '';
         window.alert('添加成功');
       }
@@ -64,12 +67,15 @@
 </script>
 
 <style lang="scss" scoped>
+  @import "~@/assets/style/helper.scss";
   ::v-deep .layout-content {
     display: flex;
     flex-direction: column-reverse;
   }
 
   .notes {
+    @extend %innerShadow;
+    background: #f9f9f9;
     padding: 12px 0;
   }
 </style>

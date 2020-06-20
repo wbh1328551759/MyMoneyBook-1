@@ -39,9 +39,10 @@
 
 <style lang="scss" scoped>
   .tags {
-    background: white;
-    font-size: 16px;
+    background: #09c775;
+    font-size: 20px;
     padding-left: 16px;
+    color: white;
 
     > .tag {
       min-height: 44px;
@@ -51,10 +52,10 @@
       border-bottom: 1px solid #e7e7e7;
 
       svg {
-        color: #666;
+        color: white;;
         margin-right: 16px;
-        width: 16px;
-        height: 16px;
+        width: 20px;
+        height: 20px;
       }
     }
   }

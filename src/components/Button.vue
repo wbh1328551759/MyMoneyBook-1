@@ -18,11 +18,13 @@
 
 <style lang="scss" scoped>
   .button {
-    background: #767676;
+    background: #ffab40;
+    font-weight: bold;
     color: white;
     border-radius: 4px;
     border: none;
-    padding: 8px 16px;
+    padding: 10px 36px;
+
     &-wrapper {
       text-align: center;
       padding: 16px;

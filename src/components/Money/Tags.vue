@@ -59,16 +59,16 @@
       flex-wrap: wrap;
 
       > li {
-        background: #d9d9d9;
+        background: #f5f5f5;
         height: 24px;
         line-height: 24px;
         border-radius: 12px;
         padding: 0 16px;
         margin-right: 12px;
         margin-top: 5px;
-
+        color: #9c9c9c;
         &.selected {
-          background: black;
+          background: #0ac675;
           color: white;
         }
       }
@@ -81,7 +81,7 @@
         background: transparent;
         border: none;
         border-bottom: 1px solid;
-        color: #999;
+        color: #686c6f;
         padding: 0 4px;
       }
     }
